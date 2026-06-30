@@ -403,7 +403,7 @@ export default function App() {
       const geoUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(cityInput)}&limit=1`;
       const res = await fetch(geoUrl, {
         headers: {
-          'User-Agent': 'Cleanity-CivicPortal/1.0 (sourish25maity@gmail.com)'
+          'User-Agent': 'Cleanity/1.0 (sourish25maity@gmail.com)'
         }
       });
       const data = await res.json();
@@ -1901,7 +1901,7 @@ export default function App() {
                                       'first-report': { label: 'Hazard Spotter', style: 'bg-amber-50 text-amber-800 border-amber-200' },
                                       'voter-badge': { label: 'Community Supporter', style: 'bg-blue-50 text-blue-800 border-blue-200' },
                                       'verified-citizen': { label: 'Ground Truth Reviewer', style: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
-                                      'civic-pillar': { label: 'Civic Pillar', style: 'bg-purple-50 text-purple-800 border-purple-200' },
+                                      'city-pillar': { label: 'Cleanity Pillar', style: 'bg-purple-50 text-purple-800 border-purple-200' },
                                       'eagle-eye': { label: 'Eagle Eye', style: 'bg-rose-50 text-rose-800 border-rose-200' },
                                       'streak-3': { label: '3-Day Active', style: 'bg-orange-50 text-orange-800 border-orange-200' },
                                     };

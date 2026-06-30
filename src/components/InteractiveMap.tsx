@@ -71,7 +71,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18`,
           {
             headers: {
-              'User-Agent': 'Cleanity-CivicPortal/1.0 (sourish25maity@gmail.com)'
+              'User-Agent': 'Cleanity/1.0 (sourish25maity@gmail.com)'
             }
           }
         );

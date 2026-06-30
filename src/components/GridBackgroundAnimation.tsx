@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-interface CivicNode {
+interface GridNode {
   x: number;
   y: number;
   size: number;
@@ -24,8 +24,8 @@ export const GridBackgroundAnimation: React.FC = () => {
     let height = window.innerHeight;
     let dpr = window.devicePixelRatio || 1;
 
-    // Initialize clean, slow-pulsing civic nodes (utility points, hazard monitoring nodes)
-    const nodes: CivicNode[] = [];
+    // Initialize clean, slow-pulsing monitoring nodes (active hazard points, utility junctions)
+    const nodes: GridNode[] = [];
     const nodeCount = 15;
 
     for (let i = 0; i < nodeCount; i++) {
