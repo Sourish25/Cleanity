@@ -1,0 +1,6 @@
+{
+  "name": "Cleanity",
+  "description": "A clean, professional neighborhood utility and infrastructure hazard reporter, allowing citizens to file, upvote, and track local resolutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
