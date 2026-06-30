@@ -356,7 +356,7 @@ let userProfiles: { [email: string]: UserProfile } = {
     name: 'Elena Kovalev',
     xp: 1120,
     level: 4,
-    badges: ['civic-pillar', 'eagle-eye', 'verified-citizen'],
+    badges: ['city-pillar', 'eagle-eye', 'verified-citizen'],
     reportsCount: 8,
     votesCount: 24,
     streak: 5
@@ -417,9 +417,9 @@ const awardXP = (email: string, amount: number, actionType: 'report' | 'vote' | 
       profile.badges.push('first-report');
       newBadges.push('first-report');
     }
-    if (profile.reportsCount === 5 && !profile.badges.includes('civic-pillar')) {
-      profile.badges.push('civic-pillar');
-      newBadges.push('civic-pillar');
+    if (profile.reportsCount === 5 && !profile.badges.includes('city-pillar')) {
+      profile.badges.push('city-pillar');
+      newBadges.push('city-pillar');
     }
   } else if (actionType === 'vote' || actionType === 'verify') {
     profile.votesCount += 1;
@@ -520,7 +520,7 @@ app.post('/api/issues/seed', async (req, res) => {
       const geoUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${targetLat}&lon=${targetLng}&zoom=18`;
       const response = await fetch(geoUrl, {
         headers: {
-          'User-Agent': 'Cleanity-CivicPortal/1.0 (sourish25maity@gmail.com)'
+          'User-Agent': 'Cleanity/1.0 (sourish25maity@gmail.com)'
         }
       });
       const data = await response.json();
@@ -551,7 +551,7 @@ app.post('/api/issues/seed', async (req, res) => {
       address: displayAddress,
       status: idx === 1 ? 'under_review' : idx === 3 ? 'resolved' : 'reported',
       priority: t.priority,
-      reporterName: 'Civic Bot',
+      reporterName: 'Cleanity Bot',
       reporterEmail: 'bot@citygov.org',
       createdAt: new Date(Date.now() - idx * 2 * 24 * 60 * 60 * 1000).toISOString(),
       upvotes: Math.floor(Math.random() * 25) + 5,
@@ -566,7 +566,7 @@ app.post('/api/issues/seed', async (req, res) => {
           status: 'reported',
           description: `Issue flagged by automatic spatial monitor. Coordinates registered.`,
           createdAt: new Date(Date.now() - idx * 2 * 24 * 60 * 60 * 1000).toISOString(),
-          author: 'Civic Bot'
+          author: 'Cleanity Bot'
         }
       ],
       comments: [
